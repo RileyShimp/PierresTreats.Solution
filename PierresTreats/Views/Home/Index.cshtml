@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Factory Management System.</h1>
+
+<div class="row">
+  <div class="col-3">
+    <h2>Treats</h2>
+    <ul>
+    @foreach (var Treat in ViewBag.Treats)
+    {
+      <li>@Html.ActionLink($"{Treat.Description}", "Details", "Treats", new { id = Treat.TreatId })</li>
+    }
+    </ul>
+  </div>
+
+  <div class="col-3">
+    <h2>Flavors</h2>
+    <ul>
+      @foreach(var Flavor in ViewBag.Flavors)
+      {
+        <li>@Html.ActionLink($"{Flavor.Name}", "Details", "Flavors", new { id = Flavor.FlavorId })</li>
+      }
+    </ul>
+  </div>
+</div>
